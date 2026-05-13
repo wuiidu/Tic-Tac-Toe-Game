@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Caro 3x3</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="Bootstrap/CSS/bootstrap.min.css" />
+    <script src="Bootstrap/JS/bootstrap.bundle.min.js"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="Caro3x3.css" />
+  </head>
+  <body>
+    <!-- TÊN GAME -->
+    <header>
+      <p
+        style="
+          font-size: 40px;
+          color: #0991ea;
+          font-weight: 700;
+          letter-spacing: 3px;
+        "
+      >
+        Tic Tac Toe
+      </p>
+      <p style="font-size: 20px; color: #000000; text-shadow: 0.5px 0 #000000">
+        (Caro 3x3)
+      </p>
+    </header>
+
+    <main>
+      <!-- Menu Game -->
+      <div class="MenuGame">
+        <!-- Khung Chọn chế độ -->
+        <div class="Menu-BatDau">
+          <!-- Nút New Game -->
+          <button class="BatDau-NewGame">New Game</button>
+
+          <!-- Nút Game Mode -->
+          <button class="BatDau-GameMode">Game Mode</button>
+          <div class="BatDau-KhungGameMode">
+            <!-- Game Mode: Easy -->
+            <button class="GameMode-Easy">Easy</button>
+
+            <!-- Game Mode: Medium -->
+            <button class="GameMode-Medium">Medium</button>
+
+            <!-- Game Mode: Hard -->
+            <button class="GameMode-Hard">Hard</button>
+          </div>
+
+          <!-- Nút Play -->
+          <button class="BatDau-Play">
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 40 50"
+            >
+              <path
+                transform="rotate(90 20 25)"
+                d="m-1,43.49999l21,-36.99999l21,36.99999l-42.00001,0z"
+                fill="currentColor"
+              />
+            </svg>
+            Play
+          </button>
+
+          <!-- Nút Pause -->
+          <button class="BatDau-Pause">
+            <svg
+              width="11"
+              height="26.000000000000004"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <title>Layer 1</title>
+                <path
+                  fill="currentColor"
+                  d="m7.02338,5.95522l3.25373,0l0,14.08955l-3.25373,0l0,-14.08955z"
+                  id="svg_1"
+                  stroke="currentColor"
+                />
+                <path
+                  fill="currentColor"
+                  d="m0,5.95522l3.25373,0l0,14.08956l-3.25373,0l0,-14.08956z"
+                  id="svg_6"
+                  stroke="currentColor"
+                />
+              </g>
+            </svg>
+            Pause
+          </button>
+        </div>
+
+        <!-- Khung Trò chơi -->
+        <div class="Menu-Game">
+          <!-- Lượt chơi -->
+          <div class="Game-LuotChoi">
+            <p>Player's Turn</p>
+            <!-- <p>Computer's Turn</p> -->
+          </div>
+
+          <div class="Game-DuongKeTren"></div>
+
+          <!-- Khung Caro -->
+          <table class="Game-KhungCaro">
+            <tr>
+              <td data-index="0"></td>
+              <td data-index="1"></td>
+              <td data-index="2"></td>
+            </tr>
+            <tr>
+              <td data-index="3"></td>
+              <td data-index="4"></td>
+              <td data-index="5"></td>
+            </tr>
+            <tr>
+              <td data-index="6"></td>
+              <td data-index="7"></td>
+              <td data-index="8"></td>
+            </tr>
+          </table>
+
+          <div class="Game-DuongKeDuoi"></div>
+
+          <!-- Hướng dẫn -->
+          <p class="Game-HuongDan">PLACE 3 IN A ROW!</p>
+        </div>
+
+        <!-- Khung Thông số -->
+        <div class="Menu-ThongSo">
+          <!-- Số liệu thống kê AI -->
+          <div class="AIstats">
+            <p class="AIstats-TieuDe">AI Stats</p>
+            <p class="AIstats-NoiDung">
+              Nodes explored: ...<br />
+              Pruned nodes: ...<br />
+              Search depth: ...<br />
+              Computation time: ... ms
+            </p>
+          </div>
+
+          <!-- Nhật ký cây tìm kiếm -->
+          <div class="SearchTreeLog">
+            <p class="SearchTreeLog-TieuDe">Search Tree Log</p>
+            <p class="SearchTreeLog-TieuDeCon">Root</p>
+            <p class="SearchTreeLog-NoiDung">
+              Move (..., ...) → Value = ...<br />
+              Move (..., ...) → Pruned
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tùy Chọn -->
+      <div class="TuyChon">
+        <!-- Khung Thông tin & Âm lượng -->
+        <div class="TuyChon-ThongTin_AmLuong">
+          <!-- Thông tin -->
+          <button class="TuyChon-ThongTin">i</button>
+
+          <!-- Âm lượng -->
+          <button class="TuyChon-AmLuong" id="btn-volume">
+            <!-- Loa mở -->
+            <svg
+              id="loaMo"
+              width="26"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+            >
+              <g>
+                <title>Layer 1</title>
+                <path
+                  d="m2.15202,7.71244l0,8.73808l4.40983,0l6.6015,6.11532l0.00392,-20.96873l-6.60248,6.11532l-4.41277,0zm13.54636,-1.00483c-0.38555,-0.43049 -1.0046,-0.43049 -1.38819,0.00221c-0.38261,0.4327 -0.38261,1.13321 0.00196,1.56701l0,-0.00221c0.84665,0.95614 1.36857,2.26752 1.36857,3.72497c0,1.45635 -0.52094,2.76329 -1.36661,3.71944c-0.38653,0.43049 -0.38653,1.13099 -0.00196,1.5659c0.19131,0.2158 0.44245,0.32425 0.6936,0.32425c0.25213,0 0.50328,-0.10845 0.69458,-0.32425c1.19885,-1.35011 1.94248,-3.22587 1.9415,-5.28534c0.00098,-2.06389 -0.7456,-3.94187 -1.94346,-5.29198zm2.25151,-2.53865c-0.38555,-0.4327 -1.0046,-0.4327 -1.38623,0c-0.38457,0.4327 -0.38457,1.13431 0,1.5648c1.42253,1.60574 2.29959,3.81461 2.29959,6.26472c0,2.4479 -0.87706,4.65566 -2.29762,6.26251c-0.38457,0.43159 -0.38457,1.1321 0,1.5648c0.19131,0.2158 0.44245,0.32425 0.69458,0.32425c0.25115,0 0.5023,-0.10845 0.6936,-0.32425c1.77374,-2.00192 2.8735,-4.77518 2.87154,-7.82731c0.00098,-3.05434 -1.09878,-5.82981 -2.87546,-7.82952zm2.13771,-2.41138c-0.38555,-0.4327 -1.00558,-0.43049 -1.38721,0.00221c-0.38359,0.43049 -0.38359,1.1321 0.00196,1.56369l-0.00196,0c1.97093,2.22325 3.18646,5.28202 3.18646,8.675c0,3.38966 -1.21552,6.44953 -3.18449,8.67389c-0.38359,0.43159 -0.38359,1.1321 0.00196,1.5659c0.19032,0.21469 0.44147,0.32203 0.69262,0.32203s0.50328,-0.10845 0.69458,-0.32425c2.31823,-2.61832 3.75841,-6.2448 3.75645,-10.23758c0.00196,-3.9961 -1.43822,-7.62368 -3.76037,-10.2409z"
+                />
+              </g>
+            </svg>
+
+            <!-- Loa tắt -->
+            <svg
+              id="loaTat"
+              width="26"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              style="display: none"
+            >
+              <g>
+                <title>Layer 2</title>
+                <path
+                  d="m2.21613,7.78925l0,8.75111l4.54903,0l6.80988,6.12445l0.00405,-21l-6.8109,6.12445l-4.55207,0z"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Khung Re/Undo & Sao thắng -->
+        <div class="TuyChon-ReUndo_Sao">
+          <!-- Re/Undo -->
+          <div class="TuyChon-ReUndo">
+            <button class="Undo">
+              <svg width="25" height="20" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>Undo</title>
+                  <path
+                    stroke="null"
+                    id="svg_1"
+                    d="m10.73392,4.52124l0,-1.57387l-9.60234,4.87481l9.60234,4.87486l0,-1.68879c2.60565,-0.00107 7.18005,0.19472 7.18005,1.58238c0,1.93888 -4.77742,2.97322 -4.77742,2.97322l0,1.48659c0,0 10.73187,0.32242 10.73187,-6.85095c0,-5.63569 -9.19145,-5.84747 -13.1345,-5.67825z"
+                    fill="currentColor"
+                  />
+                </g>
+              </svg>
+            </button>
+            <button class="Redo">
+              <svg width="25" height="20" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(25,0) scale(-1,1)">
+                  <title>Redo</title>
+                  <path
+                    stroke="null"
+                    id="svg_1"
+                    d="m10.73392,4.52124l0,-1.57387l-9.60234,4.87481l9.60234,4.87486l0,-1.68879c2.60565,-0.00107 7.18005,0.19472 7.18005,1.58238c0,1.93888 -4.77742,2.97322 -4.77742,2.97322l0,1.48659c0,0 10.73187,0.32242 10.73187,-6.85095c0,-5.63569 -9.19145,-5.84747 -13.1345,-5.67825z"
+                    fill="currentColor"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Sao thắng -->
+          <div class="TuyChon-Sao">
+            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <title>Layer 1</title>
+                <path
+                  transform="rotate(-20 16.7154 14.434)"
+                  stroke="null"
+                  stroke-width="0"
+                  id="svg_3"
+                  d="m16.71283,22.29122l-9.16392,7.03525l3.503,-11.38023l-9.16185,-7.03525l11.32492,0.00218l3.00994,-9.78547l0.491,-1.58931l3.49681,11.37259l11.32802,0l-9.16598,7.03525l3.50403,11.3835l-9.16598,-7.03852l0,0z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+            0
+          </div>
+        </div>
+
+        <!-- Khung Gợi ý -->
+        <div class="TuyChon-GoiY">
+          <button class="GoiY">Hint</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Thông báo kết thúc -->
+    <div id="gameOverlay" class="game-overlay" style="display: none">
+      <div id="gameMessage" class="game-message">You Win!</div>
+    </div>
+
+    <script src="Caro3x3.js"></script>
+  </body>
+</html>

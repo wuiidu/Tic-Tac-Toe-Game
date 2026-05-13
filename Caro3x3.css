@@ -1,0 +1,615 @@
+body {
+  background-color: #eeeeee;
+
+  /* Kiểu font chữ */
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* border: 1px solid red; */
+}
+
+/* ===================================================================================================================== */
+/* TÊN GAME */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  /* border: 1px solid red; */
+}
+header p {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid black; */
+}
+
+/* ===================================================================================================================== */
+/* MENU GAME */
+
+.MenuGame {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  height: 450px;
+  /* border: 1px solid black; */
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* KHUNG CHỌN CHẾ ĐỘ */
+
+.Menu-BatDau {
+  padding: 10px 0;
+  width: 294px;
+  height: 100%;
+  /* border: 1px solid blue; */
+}
+
+/* Nút New Game */
+.BatDau-NewGame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+  padding: 8px 0px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #0991ea;
+  background-color: #ffffff;
+  border: 2px solid #0991ea;
+}
+.BatDau-NewGame:hover {
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 2px solid #0991ea;
+}
+
+/* Nút Game Mode */
+.BatDau-GameMode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0;
+  padding: 8px 0px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #6f00ff;
+  background-color: #ffffff;
+  border: 2px solid #6f00ff;
+}
+.BatDau-GameMode:hover {
+  color: #ffffff;
+  background-color: #6f00ff;
+  border: 2px solid #6f00ff;
+}
+.BatDau-GameMode.active,
+.BatDau-GameMode.active:hover {
+  color: #ffffff;
+  background-color: #6f00ff;
+  border: 2px solid #6f00ff;
+  cursor: default;
+}
+.BatDau-KhungGameMode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  /* border: 1px solid red; */
+}
+.BatDau-KhungGameMode {
+  display: none;
+}
+/* Game Mode: Easy */
+.GameMode-Easy {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #00c0d1;
+  background-color: #ffffff;
+  border: 2px solid #00c0d1;
+}
+.GameMode-Easy:hover {
+  color: #000000;
+  background-color: #00eaff;
+  border: 2px solid #00eaff;
+}
+.GameMode-Easy.active,
+.GameMode-Easy.active:hover {
+  color: #000000;
+  background-color: #00eaff;
+  border: 2px solid #00eaff;
+  cursor: default;
+}
+/* Game Mode: Medium */
+.GameMode-Medium {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #ff9a00;
+  background-color: #ffffff;
+  border: 2px solid #ff9a00;
+}
+.GameMode-Medium:hover {
+  color: #ffffff;
+  background-color: #ff9a00;
+  border: 2px solid #ff9a00;
+}
+.GameMode-Medium.active,
+.GameMode-Medium.active:hover {
+  color: #ffffff;
+  background-color: #ff9a00;
+  border: 2px solid #ff9a00;
+  cursor: default;
+}
+/* Game Mode: Hard */
+.GameMode-Hard {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #ff0000;
+  background-color: #ffffff;
+  border: 2px solid #ff0000;
+}
+.GameMode-Hard:hover {
+  color: #ffffff;
+  background-color: #ff0000;
+  border: 2px solid #ff0000;
+}
+.GameMode-Hard.active,
+.GameMode-Hard.active:hover {
+  color: #ffffff;
+  background-color: #ff0000;
+  border: 2px solid #ff0000;
+  cursor: default;
+}
+
+/* Nút Play */
+.BatDau-Play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+  padding: 8px 0px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #06c200;
+  background-color: #ffffff;
+  border: 2px solid #06c200;
+}
+.BatDau-Play:hover {
+  color: #ffffff;
+  background-color: #06c200;
+  border: 2px solid #06c200;
+}
+.BatDau-Play.active,
+.BatDau-Play.active:hover {
+  color: #ffffff;
+  background-color: #06c200;
+  border: 2px solid #06c200;
+  cursor: default;
+}
+
+/* Nút Pause */
+.BatDau-Pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+  padding: 8px 0px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #d0021b;
+  background-color: #ffffff;
+  border: 2px solid #d0021b;
+}
+.BatDau-Pause:hover {
+  color: #ffffff;
+  background-color: #d0021b;
+  border: 2px solid #d0021b;
+}
+.BatDau-Pause.active,
+.BatDau-Pause.active:hover {
+  color: #ffffff;
+  background-color: #d0021b;
+  border: 2px solid #d0021b;
+  cursor: default;
+}
+
+@keyframes blink-gray {
+  0%,
+  100% {
+    color: inherit;
+    background-color: #ffffff;
+    border-color: inherit;
+  }
+  50% {
+    color: #aeaeae !important;
+    background-color: #f0f0f0 !important;
+    border-color: #aeaeae !important;
+  }
+}
+
+.blink {
+  animation: blink-gray 0.2s ease-in-out 3;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* KHUNG TRÒ CHƠI */
+
+.Menu-Game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 100%;
+  /* border: 1px solid blue; */
+}
+
+/* Lượt chơi */
+.Game-LuotChoi {
+  text-align: center;
+  width: 350px;
+  height: auto;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0991ea;
+  /* border: 1px solid red; */
+}
+.Game-LuotChoi p {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid green; */
+}
+
+.Game-DuongKeTren {
+  margin: 5px 0 8px 0;
+  width: 350px;
+  border: 1px solid #0991ea;
+}
+
+/* Khung Caro */
+.Game-KhungCaro {
+  border-collapse: collapse;
+  /* border: 5px solid red; */
+}
+.Game-KhungCaro td {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  width: 116.66px;
+  height: 116.66px;
+  background-color: #85ceff;
+}
+/* .Game-KhungCaro td:hover {
+  background-color: #5dbeff;
+} */
+/* viền phải cho ô không phải ô cuối cùng */
+.Game-KhungCaro td:not(:last-child) {
+  border-right: 10px solid #eeeeee;
+}
+/* viền dưới cho hàng không phải hàng cuối */
+.Game-KhungCaro tr:not(:last-child) td {
+  border-bottom: 10px solid #eeeeee;
+}
+
+.Game-DuongKeDuoi {
+  margin: 8px 0 5px 0;
+  width: 350px;
+  border: 1px solid #0991ea;
+}
+
+/* Hướng dẫn */
+.Game-HuongDan {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0991ea;
+  /* border: 1px solid red; */
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* KHUNG THÔNG SỐ */
+
+.Menu-ThongSo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  /* border: 1px solid blue; */
+}
+
+/* Số liệu thống kê AI */
+.AIstats {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+}
+.AIstats-TieuDe {
+  text-align: center;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0991ea;
+  /* border: 1px solid red; */
+}
+.AIstats-NoiDung {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #000000;
+  /* border: 1px solid red; */
+}
+
+/* Nhật ký cây tìm kiếm */
+.SearchTreeLog {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  overflow-y: auto;
+}
+.SearchTreeLog-TieuDe {
+  text-align: center;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0991ea;
+  /* border: 1px solid red; */
+}
+.SearchTreeLog-TieuDeCon {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  /* border: 1px solid red; */
+}
+.SearchTreeLog-NoiDung {
+  text-align: left;
+  margin: 0 0 0 15px;
+  padding: 0;
+  font-size: 16px;
+  color: #000000;
+  /* border: 1px solid red; */
+}
+
+/* ===================================================================================================================== */
+/* TÙY CHỌN */
+
+.TuyChon {
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+  width: 100%;
+  height: 120px;
+  /* border: 1px solid black; */
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* THÔNG TIN & ÂM LƯỢNG */
+
+.TuyChon-ThongTin_AmLuong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 294px;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+/* Thông tin */
+.TuyChon-ThongTin {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0px 13.5px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #0991ea;
+  background-color: #ffffff;
+  border: 2px solid #0991ea;
+}
+.TuyChon-ThongTin:hover {
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 2px solid #0991ea;
+}
+
+/* Âm lượng */
+.TuyChon-AmLuong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 5px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #0991ea;
+  background-color: #ffffff;
+  border: 2px solid #0991ea;
+}
+.TuyChon-AmLuong:hover {
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 2px solid #0991ea;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* RE/UNDO & SAO THẮNG */
+
+.TuyChon-ReUndo_Sao {
+  display: flex;
+  width: 350px;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+/* Undo/Redo */
+.TuyChon-ReUndo {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 5px;
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid green; */
+}
+.Undo {
+  display: flex;
+  align-items: center;
+  padding: 8px 5.5px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #0991ea;
+  background-color: #ffffff;
+  border: 2px solid #0991ea;
+}
+.Undo:hover {
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 2px solid #0991ea;
+}
+.Redo {
+  display: flex;
+  align-items: center;
+  padding: 8px 5.5px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #0991ea;
+  background-color: #ffffff;
+  border: 2px solid #0991ea;
+}
+.Redo:hover {
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 2px solid #0991ea;
+}
+
+/* Sao thắng */
+.TuyChon-Sao {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 2px;
+  width: 50%;
+  height: 100%;
+  font-size: 26px;
+  font-weight: 600;
+  color: #0991ea;
+  /* border: 1px solid green; */
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* GỢI Ý */
+
+.TuyChon-GoiY {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.GoiY {
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  color: #0991ea;
+  background-color: #ffffff;
+  border: 2px solid #0991ea;
+}
+.GoiY:hover {
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 2px solid #0991ea;
+}
+
+/* ===================================================================================================================== */
+/* THÔNG BÁO KQ KHI KẾT THÚC GAME */
+
+/* Overlay nền tối */
+.game-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Thông báo ở giữa */
+.game-message {
+  padding: 30px 50px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #0991ea;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ===================================================================================================================== */
